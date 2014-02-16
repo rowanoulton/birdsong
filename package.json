@@ -2,6 +2,11 @@
   "name": "Birdsong",
   "description": "Create a natural soundscape out of an office of computers",
   "version": "0.0.1",
+  "author": "Rowan Oulton <rowan.oulton@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rowanoulton/birdsong.git"
+  },
   "dependencies": {
     "socket.io": "0.9.x",
     "express": "3.x"

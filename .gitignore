@@ -1,2 +1,5 @@
-# Node stuff
+# Node
 node_modules/
+
+# Sublime project
+Birdsong.sublime-workplace

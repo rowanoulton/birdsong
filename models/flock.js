@@ -35,7 +35,7 @@ Flock.prototype.getRandom = function () {
 };
 
 /*
- * Add one of many birds to the collection
+ * Add one or many birds to the collection
  *
  * @method add
  * @param {Array|Bird} data

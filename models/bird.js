@@ -37,13 +37,16 @@ Bird.prototype.get = function (property) {
 /*
  * Load recordings from the XenoCanto API and store them
  *
- * @param {Function} callback
+ * @param {Function} [callback]
  */
 Bird.prototype.load = function (callback) {
     this.api.search(this.args, function (data) {
         this.recordings = data.entity.recordings;
         console.log(this.recordings.length + ' recordings loaded for ' + this.get('name'));
-        callback();
+
+        if (_.isFunction(callback)) {
+            callback();
+        }
     }.bind(this));
 };
 

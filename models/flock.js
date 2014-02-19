@@ -35,6 +35,16 @@ Flock.prototype.getRandom = function () {
 };
 
 /*
+ * Returns the current count of birds in this collection
+ *
+ * @method getCount
+ * @return {Integer} count The count of birds in this collection
+ */
+Flock.prototype.getCount = function () {
+    return this.birds.length;
+};
+
+/*
  * Add one or many birds to the collection
  *
  * @method add

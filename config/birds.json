@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Tūī",
+        "img": "http://upload.wikimedia.org/wikipedia/commons/1/1e/Prosthemadera_novaeseelandiae_-Waikawa%2C_Marlborough%2C_New_Zealand-8_%282%29.jpg",
+        "arguments": {
+            "name": "tui",
+            "genus": "prosthemadera"
+        }
+    },
+    {
+        "name": "Bellbird",
+        "img": "http://upload.wikimedia.org/wikipedia/commons/f/f8/Anthornis_melanura_-New_Zealand-8.jpg",
+        "arguments": {
+            "name": "new zealand bellbird",
+            "genus": "anthornis"
+        }
+    },
+    {
+        "name": "Robin",
+        "img": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Petroica_australis_-Southland_District%2C_South_Island%2C_New_Zealand-8.jpg/1600px-Petroica_australis_-Southland_District%2C_South_Island%2C_New_Zealand-8.jpg",
+        "arguments": {
+            "name": "new zealand robin",
+            "genus": "petroica"
+        }
+    },
+    {
+        "name": "Fantail",
+        "img": "http://2.bp.blogspot.com/_sy3c0Bbmb5I/TIg3jSgKIVI/AAAAAAAAAGg/gn5O0NvMEb0/s400/Fantail%2Bon%2BFlax.jpg",
+        "arguments": {
+            "name": "new zealand fantail",
+            "genus": "rhipidura"
+        }
+    },
+    {
+        "name": "Kākā",
+        "img": "http://upload.wikimedia.org/wikipedia/commons/c/c6/Kaka-Parrots.jpg",
+        "arguments": {
+            "name": "kaka",
+            "genus": "nestor"
+        }
+    },
+    {
+        "name": "Kōkako",
+        "img": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Kokako.jpg/1600px-Kokako.jpg",
+        "arguments": {
+            "name": "kokako",
+            "genus": "callaeas"
+        }
+    },
+    {
+        "name": "Saddleback",
+        "img": "http://upload.wikimedia.org/wikipedia/commons/0/0d/Saddleback_tiritiri.jpg",
+        "arguments": {
+            "name": "saddleback",
+            "genus": "philesturnus"
+        }
+    }
+]

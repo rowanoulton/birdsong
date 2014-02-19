@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Birdsong</title>
+    <link rel="stylesheet" href="/css/vendor/normalize.css" type="css" media="all" />
+    <link rel="stylesheet" href="/css/screen.css" type="css" media="all" />
 </head>
 <body>
-    <!-- @todo -->
+    <div id="container">
+        <div id="background-img"></div>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/vendor/zepto.min.js"></script>
     <script src="/js/birdsong.js"></script>
 </body>
 </html>

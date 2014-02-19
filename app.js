@@ -2,9 +2,13 @@
  * Dependencies, app & socket setup
  */
 var express  = require('express'),
+    fs       = require('fs'),
+    _        = require('underscore'),
     path     = require('path'),
     http     = require('http'),
     routes   = require('./routes'),
+    Flock    = require('./models/flock'),
+    Bird     = require('./models/bird'),
     app      = express(),
     server   = http.createServer(app),
     io       = require('socket.io').listen(server, { log: false });
@@ -30,16 +34,57 @@ app.get('/', routes.index);
 /**
  * Startup
  */
-server.listen(app.get('port'));
+var readyHandler,
+    currentBird,
+    birdConfigRaw,
+    birdConfig,
+    flock;
 
-/**
- * Sockets
- */
-io.sockets.on('connection', function (socket) {
-  // @todo
-  // socket.emit('news', { hello: 'world' });
-  // socket.on('my other event', function (data) {
-  //   console.log(data);
-  // });
+// Load configuration needed to instantiate a flock of birds (oh lawd)
+birdConfigRaw = fs.readFileSync('./config/birds.json');
+try {
+  birdConfig = JSON.parse(birdConfigRaw);
+} catch (err) {
+  console.log('Error reading config/birds.json - Exiting');
+  console.log(err);
+  process.exit(1);
+}
+
+flock = new Flock();
+
+// Iterate over the configuration entries, load and add them to
+// our collection
+_.each(birdConfig, function (config) {
+  currentBird = new Bird(config);
+  currentBird.load(function (bird) {
+    flock.add(bird);
+
+    if (flock.getCount() === birdConfig.length) {
+      // Once all birds are finished loading, fire up the server
+      readyHandler();
+    }
+  });
 });
 
+/*
+ * Start listening for connections
+ *
+ * Triggered when all birds have finished loading their recordings
+ *
+ * @method readyHandler
+ */
+readyHandler = function () {
+  console.log('Listening on ' + app.get('port'));
+  server.listen(app.get('port'));
+
+  io.sockets.on('connection', function (socket) {
+    // Assign the socket a bird at random
+    socket.bird = flock.getRandom();
+
+    // Trigger welcome event, informing user of their assignment
+    socket.emit('welcome', {
+      name: socket.bird.get('name'),
+      img: socket.bird.get('img')
+    });
+  });
+};

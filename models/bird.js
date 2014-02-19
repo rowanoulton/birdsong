@@ -11,12 +11,17 @@ var XenoCanto = require('xeno-canto'),
 /*
  * @class Bird
  * @constructor
- * @param {Object} args Search parameters for XenoCanto API. See https://github.com/tripitakit/xeno-canto
+ * @param config {Object}
+ *        @param {String} config.name      The public-facing name of the bird
+ *        @param {String} config.img       The URL of an image representing the bird
+ *        @param {Object} config.arguments Search parameters for XenoCanto API. See https://github.com/tripitakit/xeno-canto
  */
-function Bird (args) {
+function Bird (config) {
     this.recordings = [];
     this.api        = new XenoCanto();
-    this.args       = args;
+    this.name       = config.name;
+    this.img        = config.img;
+    this.args       = config.arguments;
 };
 
 /**
@@ -24,14 +29,14 @@ function Bird (args) {
  */
 
 /*
- * Return a property of the search arguments
+ * Return a property of the bird
  *
  * @method get
  * @param  {String} property argument key
  * @return {Mixed}
  */
 Bird.prototype.get = function (property) {
-    return this.args[property];
+    return this[property];
 };
 
 /*
@@ -40,7 +45,7 @@ Bird.prototype.get = function (property) {
  * @param {Function} [callback] callback is passed the current instance
  */
 Bird.prototype.load = function (callback) {
-    this.api.search(this.args, function (data) {
+    this.api.search(this.get('args'), function (data) {
         this.recordings = data.entity.recordings;
         console.log(this.recordings.length + ' recordings loaded for ' + this.get('name'));
 

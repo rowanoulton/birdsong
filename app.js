@@ -90,6 +90,7 @@ readyHandler = function () {
     logCount();
 
     socket.on('disconnect', function () {
+      // @todo: Possibly problematic, would a reconnection throw the count off?
       connectedBirdCount--;
 
       // Notify the host

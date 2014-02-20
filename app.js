@@ -87,14 +87,14 @@ readyHandler = function () {
 
     // Notify the host
     console.log('A ' + socket.bird.get('name') + ' has joined.');
-    generalReport();
+    logCount();
 
     socket.on('disconnect', function () {
       connectedBirdCount--;
 
       // Notify the host
       console.log('A ' + socket.bird.get('name') + ' appears to have left.');
-      generalReport();
+      logCount();
     });
 
     // Trigger welcome event, informing user of their assignment
@@ -129,10 +129,10 @@ sendSong = function (socket) {
 
 
 /*
- * A periodic diagnostic function which reports on usage
+ * Log the number of connected birds
  *
- * @method generalReport
+ * @method logCount
  */
-generalReport = function () {
+logCount = function () {
   console.log('There are ' + connectedBirdCount + ' birds connected.');
 };

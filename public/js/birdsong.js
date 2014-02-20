@@ -49,7 +49,7 @@ $(function () {
             audioNode.on('ended', function () {
                 isSinging = false;
                 audioNode.remove();
-            }.bind(this));
+            });
         } else {
             console.log('... but I am already singing.');
         }

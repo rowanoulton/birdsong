@@ -15,5 +15,5 @@ Navigate computers on your local network to `<your ip address>:3000` in their we
 
 ### Credit
 
-- [XenoCanto](xeno-canto.org) for the audio files
+- [XenoCanto](http://xeno-canto.org) for the audio files
 - [Wikipedia](http://www.wikipedia.org/) for the imagery

@@ -77,7 +77,7 @@ Bird.prototype.getInterval = function () {
     // @todo Improve this, and make it configurable. Birds should provide some
     // kind of "chatiness" multiplier, as some birds sing often and others hardly
     // at all.
-    return _.random(2E4, 12E4);
+    return _.random(1E4, 3E4);
 };
 
 /**

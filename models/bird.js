@@ -65,6 +65,21 @@ Bird.prototype.getRandomRecording = function () {
     return _.sample(this.recordings);
 };
 
+/*
+ * Return a random(!) interval
+ *
+ * This should be used to dictate how often the bird sings
+ *
+ * @method getInterval
+ * @return {Integer} interval A random(!) interval in milliseconds
+ */
+Bird.prototype.getInterval = function () {
+    // @todo Improve this, and make it configurable. Birds should provide some
+    // kind of "chatiness" multiplier, as some birds sing often and others hardly
+    // at all.
+    return _.random(2E4, 12E4);
+};
+
 /**
  * Export
  */

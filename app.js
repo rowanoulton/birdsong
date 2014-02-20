@@ -34,8 +34,10 @@ app.get('/', routes.index);
 /**
  * Startup
  */
-var readyHandler,
+var connectedBirdCount = 0,
+    readyHandler,
     currentBird,
+    sendSong,
     birdConfigRaw,
     birdConfig,
     flock;
@@ -78,13 +80,59 @@ readyHandler = function () {
   server.listen(app.get('port'));
 
   io.sockets.on('connection', function (socket) {
+    connectedBirdCount++;
+
     // Assign the socket a bird at random
     socket.bird = flock.getRandom();
+
+    // Notify the host
+    console.log('A ' + socket.bird.get('name') + ' has joined.');
+    generalReport();
+
+    socket.on('disconnect', function () {
+      connectedBirdCount--;
+
+      // Notify the host
+      console.log('A ' + socket.bird.get('name') + ' appears to have left.');
+      generalReport();
+    });
 
     // Trigger welcome event, informing user of their assignment
     socket.emit('welcome', {
       name: socket.bird.get('name'),
       img: socket.bird.get('img')
     });
+
+    // Send a song
+    sendSong(socket);
   });
+};
+
+/*
+ * Pick a recording from the birds collection at random(!) and send the file URL
+ * to the given client
+ *
+ * Afterward, reset the timer
+ *
+ * @method sendSong
+ * @param  {Object} socket
+ */
+sendSong = function (socket) {
+  var song    = socket.bird.getRandomRecording(),
+      songUrl = song.file;
+
+  socket.emit('sing', { song: songUrl });
+  socket.songTimeout = setTimeout(function () {
+    sendSong(socket);
+  }.bind(this), socket.bird.getInterval());
+};
+
+
+/*
+ * A periodic diagnostic function which reports on usage
+ *
+ * @method generalReport
+ */
+generalReport = function () {
+  console.log('There are ' + connectedBirdCount + ' birds connected.');
 };

@@ -4,7 +4,7 @@ $(function () {
         bgImgNode       = $('#background-img'),
         headerNode      = containerNode.find('header'),
         footerNode      = containerNode.find('footer'),
-        photoCreditNode = containerNode.find('#photo-credit'),
+        photoCreditNode = footerNode.find('#photo-credit'),
         birdImgRaw      = new Image();
         birdImgNode     = $(birdImgRaw);
         socket          = io.connect(location.origin),

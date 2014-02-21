@@ -21,6 +21,16 @@ header {
     min-height: 100%;
 }
 
+a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /*
     Full screen background via http://www.minimit.com/articles/code-tips/perfect-responsive-fullscreen-backgrounds
  */

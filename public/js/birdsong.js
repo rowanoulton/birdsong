@@ -1,29 +1,42 @@
 $(function () {
-    var bodyNode      = $('body'),
-        containerNode = $('#container'),
-        bgImgNode     = $('#background-img'),
-        headerNode    = containerNode.find('header'),
-        birdImgRaw    = new Image();
-        birdImgNode   = $(birdImgRaw);
-        socket        = io.connect(location.origin),
-        isSinging     = false;
+    var bodyNode        = $('body'),
+        containerNode   = $('#container'),
+        bgImgNode       = $('#background-img'),
+        headerNode      = containerNode.find('header'),
+        footerNode      = containerNode.find('footer'),
+        photoCreditNode = containerNode.find('#photo-credit'),
+        birdImgRaw      = new Image();
+        birdImgNode     = $(birdImgRaw);
+        socket          = io.connect(location.origin),
+        isSinging       = false;
 
     socket.on('welcome', function (data) {
         var titleNode  = headerNode.find('h1'),
             welcomeMsg = 'Welcome, you have been assigned the ' + data.name + '.';
+
+        // Clear and hide the photo credit section
+        photoCreditNode.empty().hide();
 
         // Ensures we don't re-add the welcome message if the server restarts
         if (titleNode.length) {
             // Update the existing welcome message
             titleNode.html(welcomeMsg);
         } else {
-            // Create a new welcome message
+            // Create a new welcome message-
             headerNode.append('<h1>' + welcomeMsg + '</h1>');
         }
 
         // Load the background image before fading it in
         document.body.appendChild(birdImgRaw);
         birdImgNode.on('load', function () {
+            if (data.photo.credit) {
+                // Add photo credit line
+                photoCreditNode.html('Photo: <a href="' + data.photo.credit.url + '" target="_blank">' + data.photo.credit.name + '</a>').show();
+            }
+
+            // Display the footer
+            footerNode.addClass('is-visible');
+
             // Once loaded, we can assign it to be the background image for our actual background
             bgImgNode.css('background-image', 'url(' + data.photo.url + ')');
 

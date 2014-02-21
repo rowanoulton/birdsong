@@ -80,3 +80,71 @@ header h1 {
     font-size: 48px;
     font-weight: bold;
 }
+
+footer {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 0.75s ease-in-out;
+    -moz-transition: opacity 0.75s ease-in-out;
+    -o-transition: opacity 0.75s ease-in-out;
+    transition: opacity 0.75s ease-in-out;
+}
+
+footer.is-visible {
+    opacity: 1;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+footer ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+#photo-credit,
+#author-credit {
+    position: absolute;
+    bottom: 0;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0.7;
+}
+
+#photo-credit:hover,
+#author-credit:hover {
+    opacity: 1;
+}
+
+#photo-credit {
+    left: 30px;
+}
+
+#author-credit {
+    right: 30px;
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    height: 34px;
+    padding: 5px 15px;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -moz-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}

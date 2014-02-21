@@ -10,6 +10,10 @@
     <div id="background-img"></div>
     <div id="container">
         <header></header>
+        <footer>
+            <div id="photo-credit"></div>
+            <div id="author-credit">Built by <a href="https://twitter.com/rowanoulton" target="_blank">@rowanoulton</a></div>
+        </footer>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/vendor/zepto.min.js"></script>

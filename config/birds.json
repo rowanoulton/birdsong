@@ -1,7 +1,13 @@
 [
     {
         "name": "Tūī",
-        "img": "http://upload.wikimedia.org/wikipedia/commons/1/1e/Prosthemadera_novaeseelandiae_-Waikawa%2C_Marlborough%2C_New_Zealand-8_%282%29.jpg",
+        "photo": {
+            "url": "http://i.imgur.com/IYEmRfe.jpg",
+            "credit": {
+                "name": "Sid Mosdell",
+                "url" : "http://www.flickr.com/people/22357152@N02"
+            }
+        },
         "arguments": {
             "name": "tui",
             "genus": "prosthemadera"
@@ -9,7 +15,13 @@
     },
     {
         "name": "Bellbird",
-        "img": "http://upload.wikimedia.org/wikipedia/commons/f/f8/Anthornis_melanura_-New_Zealand-8.jpg",
+        "photo": {
+            "url": "http://i.imgur.com/eKtNrxv.jpg",
+            "credit": {
+                "name": "Sid Mosdell",
+                "url" : "http://www.flickr.com/people/22357152@N02"
+            }
+        },
         "arguments": {
             "name": "new zealand bellbird",
             "genus": "anthornis"
@@ -17,7 +29,13 @@
     },
     {
         "name": "Robin",
-        "img": "http://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Petroica_australis_-Southland_District%2C_South_Island%2C_New_Zealand-8.jpg/1600px-Petroica_australis_-Southland_District%2C_South_Island%2C_New_Zealand-8.jpg",
+        "photo": {
+            "url": "http://i.imgur.com/O59s0ox.jpg",
+            "credit": {
+                "name": "Tomas Sobek",
+                "url" : "http://www.flickr.com/people/45273580@N04"
+            }
+        },
         "arguments": {
             "name": "new zealand robin",
             "genus": "petroica"
@@ -25,7 +43,10 @@
     },
     {
         "name": "Fantail",
-        "img": "http://2.bp.blogspot.com/_sy3c0Bbmb5I/TIg3jSgKIVI/AAAAAAAAAGg/gn5O0NvMEb0/s400/Fantail%2Bon%2BFlax.jpg",
+        "photo": {
+            "url": "http://i.imgur.com/egv2CO3.jpg",
+            "credit": false
+        },
         "arguments": {
             "name": "new zealand fantail",
             "genus": "rhipidura"
@@ -33,7 +54,13 @@
     },
     {
         "name": "Kākā",
-        "img": "http://upload.wikimedia.org/wikipedia/commons/c/c6/Kaka-Parrots.jpg",
+        "photo": {
+            "url": "http://i.imgur.com/X5vI1Yw.jpg",
+            "credit": {
+                "name": "Small",
+                "url" : "http://www.flickr.com/people/44124447497@N01"
+            }
+        },
         "arguments": {
             "name": "kaka",
             "genus": "nestor"
@@ -41,7 +68,13 @@
     },
     {
         "name": "Kōkako",
-        "img": "http://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Kokako.jpg/1600px-Kokako.jpg",
+        "photo": {
+            "url": "http://i.imgur.com/V0sRkvX.jpg",
+            "credit": {
+                "name": "Matt Binns",
+                "url" : "http://www.flickr.com/people/69029168@N00"
+            }
+        },
         "arguments": {
             "name": "kokako",
             "genus": "callaeas"
@@ -49,7 +82,13 @@
     },
     {
         "name": "Saddleback",
-        "img": "http://upload.wikimedia.org/wikipedia/commons/0/0d/Saddleback_tiritiri.jpg",
+        "photo": {
+            "url": "http://i.imgur.com/j6AKl4k.jpg",
+            "credit": {
+                "name": "Duncan Wright",
+                "url" : "http://commons.wikimedia.org/wiki/User:Sabine%27s_Sunbird"
+            }
+        },
         "arguments": {
             "name": "saddleback",
             "genus": "philesturnus"

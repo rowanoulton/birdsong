@@ -101,7 +101,7 @@ readyHandler = function () {
     // Trigger welcome event, informing user of their assignment
     socket.emit('welcome', {
       name: socket.bird.get('name'),
-      img: socket.bird.get('img')
+      photo: socket.bird.get('photo')
     });
 
     // Send a song

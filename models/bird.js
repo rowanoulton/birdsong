@@ -13,14 +13,14 @@ var XenoCanto = require('xeno-canto'),
  * @constructor
  * @param config {Object}
  *        @param {String} config.name      The public-facing name of the bird
- *        @param {String} config.img       The URL of an image representing the bird
+ *        @param {Object} config.photo     Object containing photo URL and details for who to credit
  *        @param {Object} config.arguments Search parameters for XenoCanto API. See https://github.com/tripitakit/xeno-canto
  */
 function Bird (config) {
     this.recordings = [];
     this.api        = new XenoCanto();
     this.name       = config.name;
-    this.img        = config.img;
+    this.photo      = config.photo;
     this.args       = config.arguments;
 };
 

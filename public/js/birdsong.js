@@ -14,7 +14,7 @@ $(function () {
         document.body.appendChild(birdImgRaw);
         birdImgNode.on('load', function () {
             // Once loaded, we can assign it to be the background image for our actual background
-            bgImgNode.css('background-image', 'url(' + data.img + ')');
+            bgImgNode.css('background-image', 'url(' + data.photo.url + ')');
 
             // Force a reflow to ensure animation works when class is applied
             // @todo: This still doesn't seem to work ocassionally and it is possibly tied to the viewport size.
@@ -28,7 +28,7 @@ $(function () {
 
         // We're ready to set the source and begin loading our background
         birdImgNode.hide();
-        birdImgRaw.src = data.img;
+        birdImgRaw.src = data.photo.url;
     });
 
     socket.on('sing', function (data) {

@@ -22,7 +22,7 @@ $(function () {
             // Update the existing welcome message
             titleNode.html(welcomeMsg);
         } else {
-            // Create a new welcome message-
+            // Create a new welcome message
             headerNode.append('<h1>' + welcomeMsg + '</h1>');
         }
 

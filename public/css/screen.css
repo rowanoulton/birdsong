@@ -2,13 +2,6 @@
     box-sizing: border-box;
 }
 
-html,
-body,
-#container {
-    height:100%;
-    min-height:100%;
-}
-
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -17,8 +10,12 @@ body {
     margin: 0;
 }
 
-#container {
-    text-align: center;
+html,
+body,
+#container,
+header {
+    height: 100%;
+    min-height: 100%;
 }
 
 /*
@@ -26,7 +23,11 @@ body {
  */
 #background-img {
     opacity: 0;
-    position: relative;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     min-width: 100%;
     min-height: 100%;
     background-color: transparent;
@@ -45,18 +46,21 @@ body {
     opacity: 0.7;
 }
 
-/*
-    Absolute center via http://coding.smashingmagazine.com/2013/08/09/absolute-horizontal-vertical-centering-css/
- */
-h1 {
+#container {
+    position: relative;
+}
+
+header {
+    width: 100%;
+    display: table;
+}
+
+header h1 {
+    display: table-cell;
+    text-align: center;
+    margin: 0;
+    vertical-align: middle;
     text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 58px;
     font-size: 48px;
     font-weight: bold;
 }

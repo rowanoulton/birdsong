@@ -1,14 +1,25 @@
 $(function () {
     var bodyNode      = $('body'),
         containerNode = $('#container'),
+        bgImgNode     = $('#background-img'),
+        headerNode    = containerNode.find('header'),
         birdImgRaw    = new Image();
         birdImgNode   = $(birdImgRaw);
-        bgImgNode     = containerNode.find('#background-img'),
         socket        = io.connect(location.origin),
         isSinging     = false;
 
     socket.on('welcome', function (data) {
-        containerNode.append('<h1>Welcome, you have been assigned the ' + data.name + '.</h1>');
+        var titleNode  = headerNode.find('h1'),
+            welcomeMsg = 'Welcome, you have been assigned the ' + data.name + '.';
+
+        // Ensures we don't re-add the welcome message if the server restarts
+        if (titleNode.length) {
+            // Update the existing welcome message
+            titleNode.html(welcomeMsg);
+        } else {
+            // Create a new welcome message
+            headerNode.append('<h1>' + welcomeMsg + '</h1>');
+        }
 
         // Load the background image before fading it in
         document.body.appendChild(birdImgRaw);

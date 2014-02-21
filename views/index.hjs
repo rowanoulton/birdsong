@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="/css/screen.css" type="css" media="all" />
 </head>
 <body>
+    <div id="background-img"></div>
     <div id="container">
-        <div id="background-img"></div>
+        <header></header>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/vendor/zepto.min.js"></script>

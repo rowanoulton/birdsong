@@ -50,6 +50,9 @@ header {
     position: relative;
 }
 
+/*
+    Vertical alignment for text via http://css-tricks.com/vertically-center-multi-lined-text/
+ */
 header {
     width: 100%;
     display: table;

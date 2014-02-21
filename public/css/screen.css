@@ -8,6 +8,9 @@ body {
     color: #fff;
     background: black;
     margin: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
 }
 
 html,

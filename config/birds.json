@@ -44,8 +44,11 @@
     {
         "name": "Fantail",
         "photo": {
-            "url": "http://i.imgur.com/egv2CO3.jpg",
-            "credit": false
+            "url": "http://i.imgur.com/bXv9DbW.jpg",
+            "credit": {
+                "name": "Thiago Almeida",
+                "url": "https://www.flickr.com/people/97903876@N00"
+            }
         },
         "arguments": {
             "name": "new zealand fantail",

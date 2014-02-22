@@ -93,5 +93,90 @@
             "name": "saddleback",
             "genus": "philesturnus"
         }
+    },
+    {
+        "name": "Silvereye",
+        "photo": {
+            "url": "http://i.imgur.com/VtICWMJ.jpg",
+            "credit": {
+                "name": "JJ Harrison",
+                "url": "http://en.wikipedia.org/wiki/User:Noodle_snacks"
+            }
+        },
+        "arguments": {
+            "name": "silvereye",
+            "genus": "zosterops",
+            "country": "new"
+        }
+    },
+    {
+        "name": "Stitchbird",
+        "photo": {
+            "url": "http://i.imgur.com/z8ajx5o.jpg",
+            "credit": {
+                "name": "Andy McIntyre",
+                "url": "http://www.flickr.com/people/27646592@N08"
+            }
+        },
+        "arguments": {
+            "name": "stitchbird",
+            "genus": "notiomystis"
+        }
+    },
+    {
+        "name": "Tomtit",
+        "photo": {
+            "url": "http://i.imgur.com/7JzTS3k.jpg",
+            "credit": {
+                "name": "Mark Jobling",
+                "url": "http://en.wikipedia.org/wiki/User:Mjobling"
+            }
+        },
+        "arguments": {
+            "name": "tomtit",
+            "genus": "petroica"
+        }
+    },
+    {
+        "name": "Weka",
+        "photo": {
+            "url": "http://i.imgur.com/uzjX1i7.jpg",
+            "credit": {
+                "name": "HuttyMcphoo",
+                "url": "http://commons.wikimedia.org/wiki/User:HuttyMcphoo"
+            }
+        },
+        "arguments": {
+            "name": "weka",
+            "genus": "gallirallus"
+        }
+    },
+    {
+        "name": "Whitehead",
+        "photo": {
+            "url": "http://i.imgur.com/NEltMLR.jpg",
+            "credit": {
+                "name": "Roger South",
+                "url": "http://www.flickr.com/people/33852082@N00"
+            }
+        },
+        "arguments": {
+            "name": "whitehead",
+            "genus": "mohoua"
+        }
+    },
+    {
+        "name": "Yellowhead",
+        "photo": {
+            "url": "http://i.imgur.com/tONBbmN.jpg",
+            "credit": {
+                "name": "NZSam",
+                "url": "http://www.flickr.com/people/nzsamphotofanatic"
+            }
+        },
+        "arguments": {
+            "name": "yellowhead",
+            "genus": "mohoua"
+        }
     }
 ]

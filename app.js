@@ -133,12 +133,12 @@ getConfigFilePath = function (args, fallback) {
 
 // Load configuration needed to instantiate a flock of birds (oh lawd)
 configFilename = getConfigFilePath(process.argv, 'new-zealand-forest-daytime') + '.json';
-birdConfigRaw  = fs.readFileSync('./config/' + configFilename);
 try {
+  birdConfigRaw  = fs.readFileSync('./config/' + configFilename);
   birdConfig = JSON.parse(birdConfigRaw);
   console.log('Loaded configuration: ' + configFilename);
 } catch (err) {
-  console.log('Error reading config/birds.json - Exiting');
+  console.log('Error loading configuration: ' + configFilename + ' - Exiting');
   console.log(err);
   process.exit(1);
 }

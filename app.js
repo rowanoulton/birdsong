@@ -37,6 +37,7 @@ app.get('/', routes.index);
 var connectedBirdCount = 0,
     readyHandler,
     getConfigFilePath,
+    configFilename,
     currentBird,
     sendSong,
     birdConfigRaw,
@@ -131,9 +132,11 @@ getConfigFilePath = function (args, fallback) {
  */
 
 // Load configuration needed to instantiate a flock of birds (oh lawd)
-birdConfigRaw = fs.readFileSync('./config/' + getConfigFilePath(process.argv, 'new-zealand-forest-daytime') + '.json');
+configFilename = getConfigFilePath(process.argv, 'new-zealand-forest-daytime') + '.json';
+birdConfigRaw  = fs.readFileSync('./config/' + configFilename);
 try {
   birdConfig = JSON.parse(birdConfigRaw);
+  console.log('Loaded configuration: ' + configFilename);
 } catch (err) {
   console.log('Error reading config/birds.json - Exiting');
   console.log(err);

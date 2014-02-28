@@ -32,41 +32,16 @@ if ('development' === app.get('env')) {
 app.get('/', routes.index);
 
 /**
- * Startup
+ * Setup
  */
 var connectedBirdCount = 0,
     readyHandler,
+    getConfigFilePath,
     currentBird,
     sendSong,
     birdConfigRaw,
     birdConfig,
     flock;
-
-// Load configuration needed to instantiate a flock of birds (oh lawd)
-birdConfigRaw = fs.readFileSync('./config/birds.json');
-try {
-  birdConfig = JSON.parse(birdConfigRaw);
-} catch (err) {
-  console.log('Error reading config/birds.json - Exiting');
-  console.log(err);
-  process.exit(1);
-}
-
-flock = new Flock();
-
-// Iterate over the configuration entries, load and add them to
-// our collection
-_.each(birdConfig, function (config) {
-  currentBird = new Bird(config);
-  currentBird.load(function (bird) {
-    flock.add(bird);
-
-    if (flock.getCount() === birdConfig.length) {
-      // Once all birds are finished loading, fire up the server
-      readyHandler();
-    }
-  });
-});
 
 /*
  * Start listening for connections
@@ -137,3 +112,46 @@ sendSong = function (socket) {
 logCount = function () {
   console.log('There are ' + connectedBirdCount + ' birds connected.');
 };
+
+/*
+ * Get the path for the configuration to load from the process arguments
+ *
+ * @method getConfigFilePath
+ * @param  {Object} args     The object containing process arguments, typically this is process.argv
+ * @param  {String} fallback The default config to load if none is specified
+ * @return {String}          The path of a configuration file
+ */
+getConfigFilePath = function (args, fallback) {
+  // We ignore the first two arguments, as process.argv includes "node" and the script path
+  return args[2] || fallback;
+};
+
+/**
+ * Startup
+ */
+
+// Load configuration needed to instantiate a flock of birds (oh lawd)
+birdConfigRaw = fs.readFileSync('./config/' + getConfigFilePath(process.argv, 'new-zealand-forest-daytime') + '.json');
+try {
+  birdConfig = JSON.parse(birdConfigRaw);
+} catch (err) {
+  console.log('Error reading config/birds.json - Exiting');
+  console.log(err);
+  process.exit(1);
+}
+
+flock = new Flock();
+
+// Iterate over the configuration entries, load and add them to
+// our collection
+_.each(birdConfig, function (config) {
+  currentBird = new Bird(config);
+  currentBird.load(function (bird) {
+    flock.add(bird);
+
+    if (flock.getCount() === birdConfig.length) {
+      // Once all birds are finished loading, fire up the server
+      readyHandler();
+    }
+  });
+});

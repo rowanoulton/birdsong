@@ -1,5 +1,8 @@
 # Node
 node_modules/
 
+# SCSS
+.sass-cache/
+
 # Sublime project
 Birdsong.sublime-workspace

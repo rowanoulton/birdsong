@@ -1,0 +1,98 @@
+/*
+    Full screen background via http://www.minimit.com/articles/code-tips/perfect-responsive-fullscreen-backgrounds
+ */
+#background-img {
+    @include transition-property(opacity);
+    @include transition-duration(0.75s);
+    @include transition-timing-function(ease-in-out);
+    @include filter(blur(5px));
+
+    // Display & Box model
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+
+    // Other
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
+
+    &.is-visible {
+        opacity: 0.7;
+    }
+}
+
+#container {
+    position: relative;
+}
+
+/*
+    Vertical alignment for text via http://css-tricks.com/vertically-center-multi-lined-text/
+ */
+header {
+    width: 100%;
+    display: table;
+
+    h1 {
+        @include text-shadow(rgba(0, 0, 0, 0.5) 1px 1px 3px);
+        display: table-cell;
+        text-align: center;
+        margin: 0;
+        vertical-align: middle;
+        font-size: 48px;
+        font-weight: bold;
+    }
+}
+
+footer {
+    @include transition-property(opacity);
+    @include transition-duration(0.75s);
+    @include transition-timing-function(ease-in-out);
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    opacity: 0;
+
+    &.is-visible {
+        opacity: 1;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            list-style: none;
+        }
+    }
+}
+
+#photo-credit,
+#author-credit {
+    @include transition-property(opacity);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease-in-out);
+    position: absolute;
+    bottom: 0;
+    opacity: 0.7;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+#photo-credit {
+    left: 30px;
+}
+
+#author-credit {
+    right: 30px;
+}

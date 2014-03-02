@@ -12,6 +12,9 @@
         <header></header>
         <footer>
             <div id="photo-credit"></div>
+            <ul>
+                <li><a href="#about" class="btn">About</a></li>
+            </ul>
             <div id="author-credit">Built by <a href="https://twitter.com/rowanoulton" target="_blank">@rowanoulton</a></div>
         </footer>
     </div>

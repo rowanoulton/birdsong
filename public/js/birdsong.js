@@ -5,10 +5,20 @@ $(function () {
         headerNode      = containerNode.find('header'),
         footerNode      = containerNode.find('footer'),
         photoCreditNode = footerNode.find('#photo-credit'),
+        aboutNode       = $('#about'),
+        aboutBtn        = footerNode.find('.js-about-btn'),
         birdImgRaw      = new Image();
         birdImgNode     = $(birdImgRaw);
         socket          = io.connect(location.origin),
         isSinging       = false;
+
+    aboutBtn.on('click', function () {
+        bodyNode.addClass('prevent-scroll');
+        aboutNode.show();
+        aboutNode.get(0).offsetWidth;
+        aboutNode.addClass('is-visible');
+        return false;
+    });
 
     socket.on('welcome', function (data) {
         var titleNode  = headerNode.find('h1'),

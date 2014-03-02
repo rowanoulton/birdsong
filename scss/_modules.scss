@@ -1,5 +1,7 @@
 // Imports
 @import "modules/button";
+@import "modules/modal";
 
 // Includes
 @include birdsong-button;
+@include birdsong-modal;

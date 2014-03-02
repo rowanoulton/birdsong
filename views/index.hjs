@@ -13,10 +13,17 @@
         <footer>
             <div id="photo-credit"></div>
             <ul>
-                <li><a href="#about" class="btn">About</a></li>
+                <li><a href="#about" class="btn js-about-btn">About</a></li>
             </ul>
             <div id="author-credit">Built by <a href="https://twitter.com/rowanoulton" target="_blank">@rowanoulton</a></div>
         </footer>
+    </div>
+    <div id="about" class="modal">
+        <div class="modal-content-wrap">
+            <div class="modal-content">
+                <h1>About Birdsong</h1>
+            </div>
+        </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/vendor/zepto.min.js"></script>

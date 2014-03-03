@@ -87,10 +87,24 @@ footer {
     }
 }
 
-#photo-credit {
-    left: 30px;
+#photo-credit  { left: 30px; }
+#author-credit { right: 30px; }
+
+#about {
+    h1 {
+        margin-top: 40px;
+    }
+
+    p {
+        margin: 40px 0;
+        line-height: 150%;
+    }
 }
 
-#author-credit {
-    right: 30px;
+#diagram { margin-top: 10px; }
+
+#about-close-btn {
+    position: fixed;
+    top: 40px;
+    right: 40px;
 }

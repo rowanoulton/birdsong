@@ -3,7 +3,7 @@
     .btn {
         @include transition-property(background-color);
         @include transition-duration(0.35s);
-        @include transition-timing-function(ease-in-out);
+        @include transition-timing-function(ease);
         display: inline-block;
         border-radius: 17px;
         background: rgba(255, 255, 255, 0);
@@ -15,5 +15,34 @@
             background: rgba(255, 255, 255, 0.2);
             text-decoration: none;
         }
+    }
+}
+
+@mixin birdsong-close-button {
+    .close-btn {
+        @include background-image(
+            /* Top right corner cut-off */
+            linear-gradient(45deg, transparent 0%, transparent 90%, black 90%, black 100%),
+            /* Bottom right corner cut-off */
+            linear-gradient(-45deg, transparent 0%, transparent 90%, black 90%, black 100%),
+            /* Top left corner cut-off */
+            linear-gradient(-45deg, black 0%, black 10%, transparent 10%, transparent 100%),
+            /* Bottom left corner cut-off */
+            linear-gradient(45deg, black 0%, black 10%, transparent 10%, transparent 100%),
+            /* Diagonal white line - BL to TR */
+            linear-gradient(-45deg, transparent 0%, transparent 40%, white 40%,  white 60%,transparent 60%, transparent 100%),
+            /* Diagonal white line - TL to BR */
+            linear-gradient(45deg, transparent 0%, transparent 40%, white 40%,  white 60%,transparent 60%, transparent 100%)
+        );
+        @include transition-property(opacity);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease);
+        opacity: 0.2;
+        display:block;
+        width:50px;
+        height:50px;
+        background-color:transparent;
+
+        &:hover { opacity: 0.9; }
     }
 }

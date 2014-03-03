@@ -1,6 +1,4 @@
-* {
-    @include box-sizing(border-box);
-}
+* { @include box-sizing(border-box); }
 
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -11,6 +9,11 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
+
+    &.prevent-scroll {
+        max-height: 100%;
+        overflow: hidden;
+    }
 }
 
 html,
@@ -26,7 +29,5 @@ a {
     font-weight: bold;
     text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
-    }
+    &:hover { text-decoration: underline; }
 }

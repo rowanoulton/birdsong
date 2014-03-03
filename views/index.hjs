@@ -12,8 +12,26 @@
         <header></header>
         <footer>
             <div id="photo-credit"></div>
+            <ul>
+                <li><a href="#about" class="btn js-about-btn">About</a></li>
+            </ul>
             <div id="author-credit">Built by <a href="https://twitter.com/rowanoulton" target="_blank">@rowanoulton</a></div>
         </footer>
+    </div>
+    <div id="about" class="modal">
+        <div class="modal-content-outer-wrap">
+            <div class="modal-content-inner-wrap">
+                <div class="modal-content">
+                    <a href="#" id="about-close-btn" class="close-btn"></a>
+                    <h1>About Birdsong</h1>
+                    <p>Birdsong aims to recreate a natural soundscape of the New Zealand forest using a collection of connected devices in close proximity.</p>
+                    <p>
+                        <img id="diagram" src="/img/diagram.png" border="0" alt="Connecting multiple devices in close proximity to an instance of birdsong will recreate the sound of the New Zealand forest" />
+                    </p>
+                    <p>The project is open-source, you can find it on <a href="https://github.com/rowanoulton/birdsong" target="_blank">Github</a>.</p>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/vendor/zepto.min.js"></script>

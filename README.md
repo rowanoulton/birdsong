@@ -26,4 +26,4 @@ I'd love to include any submissions in the default project set. See the [configu
 ### Credit
 
 - [XenoCanto](http://xeno-canto.org) for the audio files
-- [Numerous photographers](https://github.com/rowanoulton/birdsong/blob/master/config/new-zealand-forest-daytime.json) who can be found in the configuration file
+- [Numerous photographers](https://github.com/rowanoulton/birdsong/blob/master/config/new-zealand-forest-daytime.json) who can be found in the configuration files

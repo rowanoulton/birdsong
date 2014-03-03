@@ -1,5 +1,6 @@
 $(function () {
-    var bodyNode        = $('body'),
+    var Document        = $(document),
+        bodyNode        = $('body'),
         containerNode   = $('#container'),
         bgImgNode       = $('#background-img'),
         headerNode      = containerNode.find('header'),
@@ -7,17 +8,41 @@ $(function () {
         photoCreditNode = footerNode.find('#photo-credit'),
         aboutNode       = $('#about'),
         aboutBtn        = footerNode.find('.js-about-btn'),
+        aboutCloseBtn   = $('#about-close-btn'),
         birdImgRaw      = new Image();
         birdImgNode     = $(birdImgRaw);
         socket          = io.connect(location.origin),
         isSinging       = false;
 
-    aboutBtn.on('click', function () {
+    aboutBtn.on('click', function (event) {
         bodyNode.addClass('prevent-scroll');
         aboutNode.show();
         aboutNode.get(0).offsetWidth;
         aboutNode.addClass('is-visible');
-        return false;
+
+        event.preventDefault();
+    });
+
+    aboutCloseBtn.on('click', function (event) {
+        if (aboutNode.hasClass('is-visible')) {
+            aboutNode.removeClass('is-visible');
+        }
+
+        event.preventDefault();
+    });
+
+    aboutNode.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+        if (!aboutNode.hasClass('is-visible')) {
+            aboutNode.hide();
+            bodyNode.removeClass('prevent-scroll');
+        }
+    });
+
+    Document.on('keyup', function (event) {
+        // React to the escape key if the about modal is visible
+        if (event.keyCode === 27 && aboutNode.hasClass('is-visible')) {
+            aboutNode.removeClass('is-visible');
+        }
     });
 
     socket.on('welcome', function (data) {

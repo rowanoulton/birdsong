@@ -21,11 +21,14 @@ $(function () {
         handleAboutSectionTransitionEnd,
         handleDocumentKeyup,
         handleWelcome,
+        loadBackgroundImage,
+        handleBackgroundImageLoadCompletion,
         handleSong,
         setWelcomeMessage,
         createAudioNode,
         isAboutSectionVisible,
-        hideAboutSection;
+        hideAboutSection,
+        reflowNode;
 
     /**
      * Open modal window containing about section

@@ -70,7 +70,7 @@ $(function () {
      * @method handleAboutSectionTransitionEnd
      */
     handleAboutSectionTransitionEnd = function () {
-        if (!aboutNode.hasClass('is-visible')) {
+        if (!isAboutSectionVisible()) {
             aboutNode.hide();
             bodyNode.removeClass('prevent-scroll');
         }

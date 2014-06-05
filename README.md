@@ -1,7 +1,7 @@
 Birdsong
 ========
 
-Create a natural soundscape out of an office of computers.
+Create a natural soundscape out of an office of computers. As seen on [Vine](https://vine.co/v/MZ2DX57WTBa).
 
 ![The birdsong client](http://cl.ly/image/0D0K1H3K341u/Image%202014-02-20%20at%208.25.23%20pm.png)
 
